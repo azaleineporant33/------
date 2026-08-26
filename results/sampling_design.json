@@ -1,0 +1,20 @@
+{
+  "n_locations": 359,
+  "area_km2": 22.880214000000002,
+  "density_estimate_sqrt_A_over_N": 0.25245432582850796,
+  "nn_mean": 0.12513837213501114,
+  "nn_median": 0.10004498987955333,
+  "nn_min": 0.005000000000000071,
+  "nn_max": 0.25049151682242676,
+  "nn_p25": 0.014317821063276365,
+  "nn_p75": 0.24964975465639844,
+  "n_with_neighbour_under_50m": 151,
+  "grid_spacing_km": 0.24964975465639855,
+  "n_pairs_total": 64261,
+  "n_pairs_below_q1_lengthscale": 193,
+  "learned_lengthscales": [
+    0.04660116377580005,
+    0.42920076431796716
+  ],
+  "note": "0.27 km quoted in notebooks 03/04 was sqrt(A/N); actual mean NN is 0.125 km"
+}

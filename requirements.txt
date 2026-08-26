@@ -1,0 +1,25 @@
+# Python 3.14.7
+#
+# 安装:
+#   python -m venv .venv
+#   .venv\Scripts\activate          # Windows
+#   source .venv/bin/activate       # macOS / Linux
+#   pip install -r requirements.txt
+#
+# torch 装的是 CPU 版。本项目 N=977, 全程精确 Cholesky, CPU 足够
+# (完整流水线约 30 分钟)。如需 CUDA 版请按 https://pytorch.org 的指引单独安装。
+
+numpy==2.5.2
+pandas==3.0.5
+scipy==1.18.0
+matplotlib==3.11.1
+scikit-learn==1.9.0        # 仅用于 fetch_openml 下载 Jura 数据集
+
+torch==2.13.0
+gpytorch==1.15.2
+
+# 运行 / 执行 notebook 用
+ipykernel==7.3.0
+jupyter_client==8.9.1
+nbformat==5.11.1
+nbclient==0.11.0
