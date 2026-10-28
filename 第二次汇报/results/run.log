@@ -1,0 +1,40 @@
+E:\Research\.venv\Lib\site-packages\linear_operator\utils\interpolation.py:66: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\aten\src\ATen\Context.cpp:823.)
+  summing_matrix = torch.sparse_coo_tensor(
+359 个位置。岩石参照类 Rock_2, 并入它的小类别 ['Rock_4']; 土地用途参照类 Landuse_3, 并入它的小类别 ['Landuse_4']
+
+  划分 0: 回归 A=0.7629  回归 B=0.7567  回归 C=0.7252  MOGP=0.7313   (44s)
+  划分 1: 回归 A=0.7174  回归 B=0.7001  回归 C=0.6768  MOGP=0.6429   (84s)
+  划分 2: 回归 A=0.6187  回归 B=0.5901  回归 C=0.5733  MOGP=0.5674   (125s)
+  划分 3: 回归 A=0.6910  回归 B=0.6683  回归 C=0.5945  MOGP=0.5996   (165s)
+  划分 4: 回归 A=0.7161  回归 B=0.6932  回归 C=0.6471  MOGP=0.6269   (204s)
+  划分 5: 回归 A=0.6417  回归 B=0.6142  回归 C=0.6152  MOGP=0.5952   (241s)
+  划分 6: 回归 A=0.6425  回归 B=0.6407  回归 C=0.5908  MOGP=0.5737   (282s)
+  划分 7: 回归 A=0.6958  回归 B=0.6708  回归 C=0.6046  MOGP=0.6189   (324s)
+  划分 8: 回归 A=0.7445  回归 B=0.7246  回归 C=0.7100  MOGP=0.7095   (366s)
+  划分 9: 回归 A=0.6786  回归 B=0.6909  回归 C=0.6374  MOGP=0.6543   (415s)
+
+用时 415s
+
+自检: MOGP RMSE 与 stage10_robustness.csv 的最大差 = 1.11e-16  (一致)
+
+========================================================================
+表 1  10 次划分汇总 (Cd 的标准化 log 尺度)
+========================================================================
+  模型      RMSE 均值±标准差         MAE      95%区间覆盖率          区间平均宽度
+  回归 A    0.6909 ± 0.0466     0.5319   93.9% (91%-97%)     2.738
+  回归 B    0.6750 ± 0.0500     0.5149   94.4% (91%-98%)     2.721
+  回归 C    0.6375 ± 0.0520     0.4880   95.2% (90%-98%)     2.530
+  MOGP    0.6320 ± 0.0544     0.4696   92.3% (89%-96%)     2.312
+
+配对检验: 回归 RMSE − MOGP RMSE  (> 0 表示 MOGP 更准)
+  MOGP vs 回归 A: 平均差 +0.0589  95%CI [+0.0415, +0.0764]  相对 +8.6%  配对t p=3.2e-05  Wilcoxon p=0.002  MOGP 赢 10/10
+  MOGP vs 回归 B: 平均差 +0.0430  95%CI [+0.0276, +0.0584]  相对 +6.4%  配对t p=0.00014  Wilcoxon p=0.002  MOGP 赢 10/10
+  MOGP vs 回归 C: 平均差 +0.0055  95%CI [-0.0065, +0.0175]  相对 +0.9%  配对t p=0.33  Wilcoxon p=0.32  MOGP 赢 6/10
+
+回归 B 平方项 F 检验 (训练数据): 划分 0 的 F=1.12, p=0.34; 10 次里 p<0.05 的有 0 次
+
+判定 (赛前标准: 配对 t 检验 p < 0.05 且平均差 > 0):
+  MOGP vs 回归 A (参考): MOGP 比回归更准
+  MOGP vs 回归 B (主比较): MOGP 比回归更准
+  MOGP vs 回归 C (附加比较, 回归 C 多用了岩石和土地用途): 两者准确度没有明显差别
+  覆盖率最接近 95% 的: 回归 C
